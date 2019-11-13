@@ -1,0 +1,18 @@
+{% extends'layout.html'%} {%block body%}
+<div class="col-12 mb-5">
+  <h1 class="text-center display-3 text-white text-uppercase">
+    welcome to Fun<span class="text-danger">Math</span>Games
+  </h1>
+</div>
+<div class="jumbotron text-center bg-dark text-white ">
+  <p class="lead">
+    this application is built on the python Flask framework and is Lorem ipsum
+    dolor sit amet consectetur adipisicing elit. Odit quia quo obcaecati, libero
+    labore dolore sint tenetur, accusantium hic doloribus ducimus amet earum
+    delectus? Minima voluptatibus dicta velit molestias sit.
+  </p>
+  {% if session.logged_in == NULL %}
+  <a href="/register" class="btn btn-primary btn-lg">Register</a>
+  <a href="/login" class="btn btn-success btn-lg">login</a> {% endif%}
+</div>
+{%endblock%}

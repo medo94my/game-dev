@@ -1,0 +1,42 @@
+{% extends 'layout.html'%} {%block body%}
+<div
+  class="card px-1 pt-3 my-5  text-monospace shadow w-50 mx-auto  bg-dark text-white vh-50 "
+  style="background-color: black"
+>
+  <form action="" method="POST" class="form">
+    <h1 class="mb-3 text-uppercase">Login</h1>
+    <div class="from-group">
+      <label>Username</label>
+      <input
+        type="text"
+        name="username"
+        class="form-control"
+        value="{{ request.form.username }}"
+      />
+    </div>
+    <div class="from-group">
+      <label>Password</label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        value="{{ request.form.password }}"
+      />
+    </div>
+    <br />
+    <p class="text-center">
+      <input
+        type="submit"
+        class="btn btn-danger text-white w-50 mt-2 text-uppercase"
+        value="Submit"
+      />
+    </p>
+  </form>
+  <div>
+    <p class="text-center">
+      Do not have an account yet?! | Click here to
+      <a class="btn btn-info text-uppercase" href="/register">Register</a>
+    </p>
+  </div>
+</div>
+{%endblock%}

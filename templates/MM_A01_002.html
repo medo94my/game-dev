@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/MM_A01_002.css" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" /> -->
+  </head>
+  <body>
+    <a href="games" class="back">BACK</a>
+    <div id="dsc-contain">
+      <div class="dsc">
+        <h1 class="dsc-title">Game Description</h1>
+        <p class="dsc-body">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus non
+          fuga, quasi cupiditate fugiat vero doloremque veritatis dolores
+          corrupti odio distinctio minima? Quod iusto mollitia maiores, sequi
+          provident tempora aliquam!
+        </p>
+      </div>
+      <button name="forwardBtn" class="start_btn" type="submit">Start</button>
+    </div>
+    <div class="container">
+      <form id="formHandler">
+        <div class="card">
+          <div class="lbls">
+            <div class="alert alert-danger" id="msg"></div>
+            <div id="score" class="lbl-score1">
+              <span class="lbl">Score:</span>
+              <span class="lbl" id="txt-score">0</span>
+            </div>
+          </div>
+          <section class="lbl-score">
+            <span class="score">Correct</span>
+            <span class="score" id="correct">0</span>
+            <span class="score">Right </span>
+            <span class="score" id="cright">0</span>
+            <span class="score">Wrong</span>
+            <span class="score" id="cwrong">0</span>
+          </section>
+
+          <div class="inputs">
+            <input type="text" class="inputz" required />
+            <input type="text" class="inputz" required />
+            <input type="text" class="inputz" required />
+            <input type="text" class="inputz" required />
+            <input type="text" class="inputz" required />
+            <input type="text" class="inputz" required />
+          </div>
+          <div class="keypad">
+            <div class="frow">
+              <button class="pads" value="1">1</button>
+              <button class="pads" value="2">2</button>
+              <button class="pads" value="3">3</button>
+            </div>
+            <div class="srow">
+              <button class="pads" value="4">4</button>
+              <button class="pads" value="5">5</button>
+              <button class="pads" value="6">6</button>
+            </div>
+            <div class="throw">
+              <button class="pads" value="7">7</button>
+              <button class="pads" value="8">8</button>
+              <button class="pads" value="9">9</button>
+            </div>
+          </div>
+          <div class="low-btn">
+            <button id="clear">Clear</button>
+            <input type="submit" class="run" value="Try" />
+          </div>
+        </div>
+      </form>
+      <div class="history">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Tries</th>
+              <th scope="col">Guessed</th>
+              <th scope="col">Correct</th>
+              <th scope="col">Right POS</th>
+              <th scope="col">Wrong POS</th>
+            </tr>
+          </thead>
+          <tbody class="list"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="../static/MM_A01_002.js"></script>
+  </body>
+</html>
