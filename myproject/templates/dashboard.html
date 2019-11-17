@@ -1,0 +1,36 @@
+{% extends 'layout.html'%} {%block body%}
+<h1 class="text-center">
+  Dashboard <small>Welcome {{ session.username }}</small>
+</h1>
+<a href="/add_article" class="btn btn-success w-25  mt-5">Add Article</a>
+<hr />
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th></th>
+    <th></th>
+  </tr>
+  {% for game in games%}
+  <tr>
+    <!--retrivingid form database-->
+    <td>{{ game._id }}</td>
+    <!--retriving titleform database-->
+    <td>{{ game.title }}</td>
+    <td>
+      <a href="edit_game/{{ game._id }}" class="btn btn-warning pull-right"
+        >Edit</a
+      >
+    </td>
+    <td>
+      <!-- deleting the article by passing its id through -->
+      <form action="{{url_for('delete_game',id=game._id)}}" method="post">
+        <input type="hidden" name="method" value="Delete" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{%endblock%}

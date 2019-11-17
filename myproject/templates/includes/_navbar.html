@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand text-uppercase" href="/  "
+    >Fun<span class="text-danger">Math</span>Games</a
+  >
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="nav navbar-nav mr-auto"></ul>
+
+    <ul class="nav navbar-nav navbar-right text-uppercase ">
+      {% if session.logged_in %}
+      <li class="nav-item">
+        <a class="nav-link" href="/games">Games</a>
+      </li>
+      <li class="nav-item">
+        <label class="nav-link text-warning mb-0" href="#">{{
+          session.username
+        }}</label>
+      </li>
+      <li class="nav-item">
+        <a class="mx-3 btn btn-danger" href="/logout"
+          >Logout<span class="sr-only">(current)</span></a
+        >
+      </li>
+
+      {% else%}
+      <li class="nav-item active">
+        <a class="nav-link" href="/"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/register"
+          >Register<span class="sr-only">(current)</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/login"
+          >Login<span class="sr-only">(current)</span></a
+        >
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>

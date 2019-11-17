@@ -1,0 +1,131 @@
+{% extends 'layout.html' %} {%block body%} {% from "includes/_formhelpers.html"
+import render_field %}
+
+<div class="card px-1 pt-3 my-5 text-monospace shadow w-100 mx-auto bg-dark text-light vh-50" style="min-width:30vh;" >
+    <h1 class="text-center display-4     text-uppercase">Register</h1>  
+    <div class="row mx-1">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+  <form method="POST">
+    <div class="form-group">
+      {{render_field(form.name , class_="form-control")}}
+    </div>
+    <div class="form-group">
+      {{render_field(form.email , class_="form-control")}}
+    </div>
+    <div class="form-group">
+      {{render_field(form.username , class_="form-control")}}
+    </div>
+    <div class="form-group">
+      {{render_field(form.password , class_="form-control")}}
+    </div>
+    <div class="form-group">
+      {{render_field(form.confirm , class_="form-control")}}
+    </div>
+    
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12 col-12">
+        <div class="form-group">
+                <dt>
+                  <label for="">Age</label>
+                </dt>
+                <input type="text" name="age" class="form-control" />
+              </div>
+              <div class="form-group" >
+                <dt>
+                  <label class="form-check-label mt-4" for="exampleRadios1">
+                    You are a:
+                  </label>
+                </dt>
+              </div>
+              <div class="form-check form-check-inline mb-3 ">
+                <input
+                class="form-check-input"
+                type="radio"
+                name="type"
+                value=""
+                id="student"
+                checked hidden
+                />
+              </div>
+                <div class="form-check form-check-inline mb-3 ">
+                  <input
+                  class="form-check-input"
+                  type="radio"
+                  name="type"
+                  value="Student"
+                  id="student"
+                  />
+                  
+                  <label class="form-check-label" >Student</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                  class="form-check-input"
+                  type="radio"
+                  name="type"
+                  value="Non-student"
+                  id="student"
+                  
+                  />
+                  <label class="form-check-label text-capitalize"  for="inlineRadio2">non-Student</label>
+                </div>
+                <div id="form-student" style="display:none;" class="from-group">
+                      <dt>
+                        <label class="form-check-label mb-2">Your Study Level:</label>
+                      </dt>
+                      <select class="form-control form-control mb-4" id="choice" name="edu_lvl">
+                        <option value="Elementary school">Elementary school</option>
+                        <option value="Middle School">Middle School</option>
+                        <option value="High school">High School </option>
+                        <option value="Bachelor Degree">Bachelor Degree</option>
+                        <option value="Home Schooled">Home Schooled</option>
+                        <option value="Graduated">Graduated</option>
+                      </select>
+                    </div>
+                     <div id="form-major" style="display:none;" class="from-group" >
+                      <dt>
+                        <label class="form-check-label mb-2">major of Study:</label>
+                      </dt>
+                      <select class="form-control form-control mb-4" name="major">
+                        <option value="information technology">Information Technology</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="Science">Science </option>
+                        <option value="Business">Business</option>
+                        <option value="Education">Education</option>
+                        <option value="Media">Media</option>
+                      </select>
+                    </div>
+                     <div id="form-job" style="display:none;" class="from-group">
+                      <dt>
+                        <label class="form-check-label mb-2">Field of Work:</label>
+                      </dt>
+                      <select class="form-control form-control mb-4" name="job">
+                        <option value="information technology">Information Technology</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="Science">Science </option>
+                        <option value="Business">Business</option>
+                        <option value="Education">Education</option>
+                        <option value="Media">Media</option>
+                      </select>
+                    </div>
+                   
+                    
+              </div>
+              
+            </div>
+            
+            <p class="text-center mt-5 mx-auto w-50"><input type="submit" class=" btn btn-danger w-100 text-uppercase" value="Register" /></p>
+
+   
+
+</form>
+</div>
+<div>
+    <p class="text-center text-info">
+     Already have an account?! <span class="text-white">| Click here to
+      <a class="btn btn-info text-uppercase" href="/login">login</a></span>
+    </p>
+  </div>
+</div>
+<br>
+{%endblock%}
