@@ -21,10 +21,10 @@ Student2.randomize()
 
 app = Flask(__name__)
 # connection to mongoDb atlas
-# app.config["MONGO_URI"] = "mongodb+srv://Flask_app:flask1234@cluster0-5sgfm.mongodb.net/test?retryWrites=true&w=majority"
+app.config["MONGO_URI"] = "mongodb+srv://Flask_app:flask1234@cluster0-5sgfm.mongodb.net/test?retryWrites=true&w=majority"
 
 # connection to mongo DB local
-app.config["MONGO_URI"] = "mongodb://localhost:27017/myapp"
+#app.config["MONGO_URI"] = "mongodb://localhost:27017/myapp"
 mongo = PyMongo(app)
 
 # home page route
