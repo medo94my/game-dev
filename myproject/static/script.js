@@ -124,7 +124,7 @@ function runGame(e) {
         }, 3000);
       } else if (counter == 10) {
         // document.querySelector('#msg').innerHTML
-        lost_game = confirm('YOU LOST !! \n\n Do You Want to Try again');
+        // lost_game = confirm('YOU LOST !! \n\n Do You Want to Try again');
         // setTimeout(() => {
         if (lost_game == true) {
           start.style.display = 'block';
