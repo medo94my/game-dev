@@ -485,4 +485,4 @@ def Post():
 
 if __name__ == '__main__':
     app.secret_key = 'secret123'  # secret key for form to work
-    app.run(debug=True)
+    app.run(debug=True,port=8000)
