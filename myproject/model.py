@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 import dns
 
-client = MongoClient("mongodb+srv://ahmed:ahmed1234@flaskapp1-lohte.mongodb.net/test?retryWrites=true&w=majority")
+client = MongoClient("mongodb+srv://ahmed:yt2kMlCzVVLT5A9d@flaskapp1-lohte.mongodb.net/test?retryWrites=true&w=majority")
 db = client.test
 class Database:
 

@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Mikayla Ahmed\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "python.pythonPath": "env\\Scripts\\python.exe",
     "liveServer.settings.port": 5501
 }

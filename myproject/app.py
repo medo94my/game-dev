@@ -483,6 +483,6 @@ def Post():
                             print("You have exceeded the limit of 10 tries.")
                     return result
 
-if __name__ == '__main__':
-    app.secret_key = 'cb592836496bbc2a4b3e9c817c3e8907'  # secret key for form to work
-    app.run(debug=True,port=8000)
+# if __name__ == '__main__':
+#     app.secret_key = 'cb592836496bbc2a4b3e9c817c3e8907'  # secret key for form to work
+#     app.run(debug=True,port=8000)
