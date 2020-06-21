@@ -1,6 +1,7 @@
 from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from flask import Flask, render_template, flash, redirect, session, logging, request, url_for
 from flask_pymongo import PyMongo
+import os
 from functools import wraps
 import dns
 # import pprint
@@ -21,10 +22,14 @@ Student2.randomize()
 
 app = Flask(__name__)
 # connection to mongoDb atlas
+# app.secret_key =\
+app.config['SECRET_KEY']= os.urandom(16)
+print (app.secret_key)
 
 client = MongoClient("mongodb+srv://ahmed:yt2kMlCzVVLT5A9d@flaskapp1-lohte.mongodb.net/test?retryWrites=true&w=majority")
 mongo = client.test
-
+# app.secret_key = 'super secret key'
+app.config['SESSION_TYPE'] = 'filesystem'
 
 # connection to mongo DB local
 #app.config["MONGO_URI"] = "mongodb://localhost:27017/myapp"
@@ -483,6 +488,6 @@ def Post():
                             print("You have exceeded the limit of 10 tries.")
                     return result
 
-# if __name__ == '__main__':
-#     app.secret_key = 'cb592836496bbc2a4b3e9c817c3e8907'  # secret key for form to work
-#     app.run(debug=True,port=8000)
+if __name__ == '__main__':
+      # secret key for form to work
+    app.run(debug=True,port=8000)
