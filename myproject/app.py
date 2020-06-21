@@ -23,7 +23,7 @@ Student2.randomize()
 app = Flask(__name__)
 # connection to mongoDb atlas
 # app.secret_key =\
-app.config['SECRET_KEY']= os.urandom(16)
+app.config['SECRET_KEY']=b'&\xc9\x0c\xf9\x7f$\x0fh\x04\x8b\x93\xbe\xd4g\xe9\x85'
 print (app.secret_key)
 
 client = MongoClient("mongodb+srv://ahmed:yt2kMlCzVVLT5A9d@flaskapp1-lohte.mongodb.net/test?retryWrites=true&w=majority")
