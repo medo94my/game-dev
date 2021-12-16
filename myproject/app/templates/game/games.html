@@ -1,4 +1,7 @@
-{% extends'layout.html' %} {%block body%}
+{% extends'layout.html' %} 
+{% from "includes/_formhelpers.html"
+import render_field %}
+{%block body%}
 <div class="col-12 mb-5">
   <h1 class="text-center display-3 text-white text-uppercase">
     Games-Dash
@@ -14,40 +17,31 @@
       <span class="text-dark ">{{ session.username }}</span>
     </h4>
   </div>
-  <div class="col-8">
     <h4 class="text-white text-dark rounded">
       Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt
       obcaecati, possimus assumenda eaque consectetur sit quaerat iste repellat!
       Blanditiis quasi inventore iste perferendis totam, beatae nobis ducimus
       voluptatem dicta soluta.
     </h4>
-  </div>
-  <div class="col-4">
     <form
-      class="form-inline my-2 my-lg-0 float-right "
-      method="post"
-      action="/add_game"
+    class="form-inline my-2 my-lg-0 float-right "
+    method="post"
+    action={{url_for('games')}}
     >
-      <div class="input-group mb-3">
-        <input
-          type="text"
-          name="gamecode"
-          class="form-control"
-          placeholder="Game Code"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-danger" type="submit" id="button-addon2">
-            Add Game
-          </button>
-        </div>
-      </div>
+    <div class="input-group my-3">
+      {{ render_field(form.title,class_="form-control")}}
+        <button class="btn btn-md btn-danger" type="submit" id="button-addon2">
+          Add Game
+        </button>
+    </div>
     </form>
-  </div>
 </div>
 
 <h1 class="text-white my-2 ">Games</h1>
 <div class="row d-flex border-top p-3 justify-content-start ">
-  {% for game in games %} {% for i in range(game['game']|length)%}
+  {% if games%}
+
+  {% for game in games['game'] %} 
 
   <div
     class="card col-lg-3 col-md-4 col-sm-6 col-12 p-0 mt-3 border-0 text-monospace mx-4"
@@ -55,18 +49,22 @@
     <img src="/static/game1.png" class="card-img-top" alt="..." />
     <div class="card-body  bg-info text-white rounded-bottom">
       <h5 class="card-title text-capitalize ">
-        {{ game['game'][i]['title'] }}
+        {{ game['title'] }}
       </h5>
       <p class="card-text text-capitalize ">
         here should game description goes
       </p>
       <a
-        href="{{ game['game'][i]['title'] }}"
+        href="#"
         class="btn btn-outline-dark btn-block text-uppercase"
         >Play</a
       >
     </div>
   </div>
-  {%endfor%} {%endfor%}
+  {%endfor%} 
+
+  {% else %}
+    <h1 class="text-white text-center">No games added yet 😭</h1>
+  {% endif %}
 </div>
 {%endblock%}

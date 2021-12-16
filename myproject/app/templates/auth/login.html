@@ -1,4 +1,6 @@
 {% extends 'layout.html'%} {%block body%}
+{% from "includes/_formhelpers.html"
+import render_field %}
 <div
   class="card px-1 pt-3 my-5  text-monospace shadow w-50 mx-auto  bg-dark text-white vh-50 "
   style="background-color: black"
@@ -6,22 +8,10 @@
   <form action="" method="POST" class="form">
     <h1 class="mb-3 text-uppercase">Login</h1>
     <div class="from-group">
-      <label>Username</label>
-      <input
-        type="text"
-        name="username"
-        class="form-control"
-        value="{{ request.form.username }}"
-      />
+      {{render_field(form.username , class_="form-control")}}
     </div>
     <div class="from-group">
-      <label>Password</label>
-      <input
-        type="password"
-        name="password"
-        class="form-control"
-        value="{{ request.form.password }}"
-      />
+     {{render_field(form.password, class_='form-control')}}
     </div>
     <br />
     <p class="text-center">
