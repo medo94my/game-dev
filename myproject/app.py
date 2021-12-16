@@ -1,29 +1,23 @@
-from wtforms import Form, StringField, TextAreaField, PasswordField, validators
 from flask import Flask, render_template, flash, redirect, session, logging, request, url_for
-from flask_pymongo import PyMongo
 import os
-from functools import wraps
 import dns
-# import pprint
 from pymongo import MongoClient
 import bcrypt
 import datetime
 from datetime import timedelta
-# import game_core
-from bson.objectid import ObjectId
 from game_core import Student
 from MM_A01_002 import Student2
 from Dynamic import Dynamic
-game = Dynamic()
-Student1 = Student()
-Student2 = Student2()
-Student1.randomize()
-Student2.randomize()
+# game = Dynamic()
+# Student1 = Student()
+# Student2 = Student2()
+# Student1.randomize()
+# Student2.randomize()
 
 app = Flask(__name__)
 # connection to mongoDb atlas
 # app.secret_key =\
-app.config['SECRET_KEY']=b'&\xc9\x0c\xf9\x7f$\x0fh\x04\x8b\x93\xbe\xd4g\xe9\x85'
+
 print (app.secret_key)
 
 client = MongoClient("mongodb+srv://ahmed:yt2kMlCzVVLT5A9d@flaskapp1-lohte.mongodb.net/test?retryWrites=true&w=majority")
@@ -35,40 +29,15 @@ app.config['SESSION_TYPE'] = 'filesystem'
 #app.config["MONGO_URI"] = "mongodb://localhost:27017/myapp"
 # mongo = PyMongo(app)
 
-# home page route
-@app.route('/')
-def index():
-    return render_template('home.html')
-# about page route
-@app.route('/about')
-def about():
-    return render_template('about.html')
+
 
 # Check if user loggedin
 
 
-def is_logged_in(f):
-    @wraps(f)
-    def fn(*args, **kwargs):
-        if 'logged_in' in session:
-            return f(*args, **kwargs)
-        else:
-            flash('Unauthorized, Please login', 'danger')
-            return redirect(url_for('login'))
-    return fn
 
 
-class RegisterForm(Form):
-    name = StringField('Name', [validators.length(min=1, max=50)])
-    username = StringField('Username', [validators.length(min=4, max=25)])
-    email = StringField('Email', [validators.length(min=4, max=50)])
-    password = PasswordField('Password',
-                             [validators.DataRequired(),
-                              validators.EqualTo('confirm', message='password do not match')])
-    confirm = PasswordField('Confirm Password')
-    # age = request.form['age']
-    # type_person = request.form['type']
-    # edu_lvl = request.form['edu_lvl']
+
+
 # Register page route
 @app.route('/register', methods=['GET', 'POST'])
 def register():
